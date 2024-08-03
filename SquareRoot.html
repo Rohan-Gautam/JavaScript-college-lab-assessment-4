@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rohan Gautam">
+    <title>JavaScript Program to Find the Square Root</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #65b7f6 0%, #780476 100%);
+            color: #000000;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        input[type="number"] {
+            padding: 10px;
+            border: 0.4vh solid #00000098;
+            border-radius: 5px;
+            width: calc(100% - 24px);
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Find the Square Root</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number" min="0">
+    <button onclick="calculateSquareRoot()">Calculate</button>
+    <div id="result"></div>
+</div>
+
+<footer>&copy; 2024 Rohan Gautam. All rights reserved.</footer>
+
+<script>
+    function calculateSquareRoot() {
+        // Get the number from input field
+        var number = document.getElementById('numberInput').value;
+        
+        // Calculate the square root
+        var squareRoot = Math.sqrt(number);
+        
+        // Display the result
+        document.getElementById('result').innerText = "The square root of " + number + " is " + squareRoot.toFixed(2);
+    }
+</script>
+
+</body>
+</html>

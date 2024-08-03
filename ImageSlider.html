@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rohan Gautam">
+    <title>Simple Image Slider</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #65b7f6 0%, #780476 100%);
+        }
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 0.4vh solid #00000098;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .slider-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider-images img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .nav-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        .nav-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <div class="slider-images">
+        <img src="https://media.licdn.com/dms/image/D5622AQGIRinhr9K6Qg/feedshare-shrink_800/0/1694002095326?e=2147483647&v=beta&t=qeNnEBCwV9J1XR5gVparlFOMsXtJz6W1gvOmSPRVtV4" alt="Image 1">
+        <img src="https://engineertips.wordpress.com/wp-content/uploads/2018/12/pure-html-vs-css.jpg" alt="Image 2">
+        <img src="https://www.boredpanda.com/blog/wp-content/uploads/2023/09/wonderful-engineering-funny-memes-151-65005bd013c26__700.jpg" alt="Image 3">
+        <img src="https://images.interestingengineering.com/images/JANUARY/memes_about_engineers_before_after.jpg" alt="Image 4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQL1LUzKsCoE3cZjPHaJ-qgcKsn64TaOAFkQ&s" alt="Image 5">
+        <img src="https://qph.cf2.quoracdn.net/main-qimg-6c3ca8a71bd757b72333d0a13d787630.webp" alt="Image 6">
+        <img src="https://qph.cf2.quoracdn.net/main-qimg-0c07ca7f34f96b7be45bb59fbd2109b4.webp" alt="Image 7">
+        <img src="https://deih43ym53wif.cloudfront.net/varanasi-india-shutterstock_150302372_275836fb38.jpeg" alt="Image 8">
+        <img src="https://static.toiimg.com/thumb/msid-92089121,width-748,height-499,resizemode=4,imgsize-139308/.jpg" alt="Image 9">
+        <img src="https://www.fabhotels.com/blog/wp-content/uploads/2019/09/Munnar-Kerala-1.jpg" alt="Image 10">
+    </div>
+    <div class="navigation">
+        <button class="nav-button prev">&lt;</button>
+        <button class="nav-button next">&gt;</button>
+    </div>
+</div>
+
+<footer>&copy; 2024 Rohan Gautam. All rights reserved.</footer>
+
+<script>
+    $(document).ready(function() {
+        var currentIndex = 0;
+        var images = $('.slider-images img');
+        var totalImages = images.length;
+
+        function showImage(index) {
+            var newLeft = -index * 100 + '%';
+            $('.slider-images').css('transform', 'translateX(' + newLeft + ')');
+        }
+
+        $('.next').click(function() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            showImage(currentIndex);
+        });
+
+        $('.prev').click(function() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            showImage(currentIndex);
+        });
+    });
+</script>
+
+</body>
+</html>

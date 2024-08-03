@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rohan Gautam">
+    <title>Replace All Instances of a Character</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #65b7f6 0%, #780476 100%);
+            color: black;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            border: 0.4vh solid #00000098;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+        }
+        input {
+            display: block;
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+        button {
+            display: block;
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Replace All Instances of a Character</h1>
+    <input type="text" id="text" placeholder="Enter the text">
+    <input type="text" id="char" placeholder="Character to replace">
+    <input type="text" id="replacement" placeholder="Replacement character">
+    <button onclick="replaceCharacter()">Replace</button>
+    <p id="result"></p>
+</div>
+
+<footer>&copy; 2024 Rohan Gautam. All rights reserved.</footer>
+
+<script>
+    function replaceCharacter() {
+        const text = document.getElementById('text').value;
+        const char = document.getElementById('char').value;
+        const replacement = document.getElementById('replacement').value;
+
+        if (char.length !== 1) {
+            document.getElementById('result').textContent = 'Please enter a single character to replace.';
+            return;
+        }
+
+        const result = text.split(char).join(replacement);
+        document.getElementById('result').textContent = `Result: ${result}`;
+    }
+</script>
+
+</body>
+</html>

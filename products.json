@@ -1,0 +1,34 @@
+{
+    "products": [
+        {
+            "name": "Product 1",
+            "price": 29.99,
+            "description": "This is a great product.",
+            "image": "https://images.hardwarezone.com/upload/files/2010/10/fad55a1137.jpg"
+        },
+        {
+            "name": "Product 2",
+            "price": 49.99,
+            "description": "This is another great product.",
+            "image": "https://i.pinimg.com/736x/1e/37/7e/1e377e37d61eb3800afcd3ad57f3913f.jpg"
+        },
+        {
+            "name": "Product 3",
+            "price": 19.99,
+            "description": "This product is also great.",
+            "image": "https://m.media-amazon.com/images/I/61rl71iPbRL._AC_UY350_.jpg"
+        },
+        {
+            "name": "Product 4",
+            "price": 99.99,
+            "description": "This is the best product.",
+            "image": "https://www.happythings.in/cdn/shop/products/Dime_d1f6ed4e-2a77-4f21-b8ba-0ce3f85e268d.jpg?v=1662466653&width=1445"
+        },
+        {
+            "name": "Product 5",
+            "price": 75.99,
+            "description": "This is a premium product.",
+            "image": "https://media.istockphoto.com/id/610241662/photo/soccer-ball-isolated-on-the-white-background.jpg?s=612x612&w=0&k=20&c=f7EWJti8x_JFmDxA8CMJvi1ulMlPjTdDP69HBWy9Hb4="
+        }
+    ]
+}

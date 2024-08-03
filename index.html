@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rohan Gautam">
+
+    <title>JavaScript & jQuery Examples</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to right, #434343 0%, black 100%);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding: 0 0 40px 0; /* Adjust padding at bottom */
+        }
+        header, footer {
+            width: 100%;
+            background-image: linear-gradient(to right, #434343 0%, black 100%);
+            color: rgba(49, 217, 255, 1);
+            text-align: center;
+            position: fixed;
+        }
+        header {
+            top: 0;
+        }
+        footer {
+            bottom: 0;
+        }
+        main {
+            top: 1;
+            width: 90%;
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            margin: 10vh 0; /* Space for header and footer */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: contents;
+        }
+
+        li {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            border: 0.4vw solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #333; /* Set default text color */
+        }
+
+        li:hover {
+            background-color: rgb(0, 0, 0);
+            transform: translateY(-5px);
+            box-shadow: 10px 10px 10px rgba(49, 217, 255, 0.8);
+            color: #007BFF; /* Change text color on hover */
+        }
+
+        li a {
+            text-decoration: none;
+            color: inherit; /* Inherit color from parent */
+            font-weight: bold;
+            display: block;
+            width: 100%;
+        }
+
+        li a:hover {
+            color: inherit; /* Keep the same color on hover */
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>JavaScript & jQuery Examples</h1>
+    </header>
+
+    <main>
+        <ul>
+            <li><a href="RealTimeSearchFilter.html">1. Real-time Search Filter using JQuery</a></li>
+            <li><a href="ImageSlider.html">2. Image Slider using jQuery</a></li>
+            <li><a href="AJAXECommerce.html">3. E-Commerce App with AJAX</a></li>
+            <li><a href="SquareRoot.html">4. JavaScript Program to Find the Square Root</a></li>
+            <li><a href="AreaOfTriangle.html">5. JavaScript Program to Calculate the Area of a Triangle</a></li>
+            <li><a href="SwapTwoVariables.html">6. JavaScript Program to Swap Two Variables</a></li>
+            <li><a href="SolveQuadraticEquation.html">7. JavaScript Program to Solve Quadratic Equation</a></li>
+            <li><a href="KilometersToMiles.html">8. JavaScript Program to Convert Kilometers to Miles</a></li>
+            <li><a href="CelsiusToFahrenheit.html">9. JavaScript Program to Convert Celsius to Fahrenheit</a></li>
+            <li><a href="GenerateRandomNumber.html">10. JavaScript Program to Generate a Random Number</a></li>
+            <li><a href="CheckPositiveNegativeZero.html">11. JavaScript Program to Check if a Number is Positive, Negative, or Zero</a></li>
+            <li><a href="CheckPrimeNumber.html">12. JavaScript Program to Check Prime Number</a></li>
+            <li><a href="PrimeNumbersInInterval.html">13. JavaScript Program to Print All Prime Numbers in an Interval</a></li>
+            <li><a href="FindFactorial.html">14. JavaScript Program to Find the Factorial of a Number</a></li>
+            <li><a href="MultiplicationTable.html">15. JavaScript Program to Display the Multiplication Table</a></li>
+            <li><a href="FibonacciSequence.html">16. JavaScript Program to Print the Fibonacci Sequence</a></li>
+            <li><a href="CheckArmstrongNumber.html">17. JavaScript Program to Check Armstrong Number</a></li>
+            <li><a href="ArmstrongNumberInInterval.html">18. JavaScript Program to Find Armstrong Number in an Interval</a></li>
+            <li><a href="SimpleCalculator.html">19. JavaScript Program to Make a Simple Calculator</a></li>
+            <li><a href="SumOfNaturalNumbers.html">20. JavaScript Program to Find the Sum of Natural Numbers</a></li>
+            <li><a href="HCF_GCD_LCM.html">21. JavaScript Program to Find HCF or GCD and LCM</a></li>
+            <li><a href="SumOfNaturalNumbersRecursion.html">22. JavaScript Program to Find Sum of Natural Numbers Using Recursion</a></li>
+            <li><a href="GuessRandomNumber.html">23. JavaScript Program to Guess a Random Number</a></li>
+            <li><a href="ShuffleDeckOfCards.html">24. JavaScript Program to Shuffle Deck of Cards</a></li>
+            <li><a href="FibonacciRecursion.html">25. JavaScript Program to Display Fibonacci Sequence Using Recursion</a></li>
+            <li><a href="FactorialRecursion.html">26. JavaScript Program to Find Factorial of Number Using Recursion</a></li>
+            <li><a href="DecimalToBinary.html">27. JavaScript Program to Convert Decimal to Binary</a></li>
+            <li><a href="ASCIIValue.html">28. JavaScript Program to Find ASCII Value of Character</a></li>
+            <li><a href="CheckPalindromeString.html">29. JavaScript Program to Check Whether a String is Palindrome or Not</a></li>
+            <li><a href="CharacterOccurrences.html">30. JavaScript Program to Check the Number of Occurrences of a Character in the String</a></li>
+            <li><a href="ConvertFirstLetterToUpperCase.html">31. JavaScript Program to Convert the First Letter of a String into UpperCase</a></li>
+            <li><a href="CountVowels.html">32. JavaScript Program to Count the Number of Vowels in a String</a></li>
+            <li><a href="CountObjectProperties.html">33. JavaScript Program to Count the Number of Keys/Properties in an Object</a></li>
+            <li><a href="AddKeyValuePair.html">34. JavaScript Program to Add Key/Value Pair to an Object</a></li>
+            <li><a href="ReplaceString.html">35. JavaScript Program to Replace All Occurrences of a String</a></li>
+            <li><a href="MultilineStrings.html">36. JavaScript Program to Create Multiline Strings</a></li>
+            <li><a href="FormatCurrency.html">37. JavaScript Program to Format Numbers as Currency Strings</a></li>
+            <li><a href="GenerateRandomString.html">38. JavaScript Program to Generate Random String</a></li>
+            <li><a href="StringStartsWith.html">39. JavaScript Program to Check if a String Starts With Another String</a></li>
+            <li><a href="ConvertObjectToString.html">40. JavaScript Program to Convert Objects to Strings</a></li>
+            <li><a href="ReplaceCharacterInString.html">41. JavaScript Program to Replace all Instances of a Character in a String</a></li>
+            <li><a href="ReplaceLineBreaks.html">42. JavaScript Program to Replace All Line Breaks with &lt;br&gt;</a></li>
+            <li><a href="CurrentDateTime.html">43. JavaScript Program to Display Current Date and Time, Check Leap Year</a></li>
+            <li><a href="InsertItemInArray.html">44. JavaScript Program to Insert Item in an Array</a></li>
+            <li><a href="AddElementToStart.html">45. JavaScript Program to Add Element to Start of an Array</a></li>
+            <li><a href="MergeArraysRemoveDuplicates.html">46. JavaScript Program to Merge Two Arrays and Remove Duplicate Items</a></li>
+            <li><a href="SortArrayOfObjects.html">47. JavaScript Program to Sort Array of Objects by Property Values</a></li>
+            <li><a href="TwoDimensionalArray.html">48. JavaScript Program to Create Two Dimensional Array</a></li>
+            <li><a href="ExtractPropertyValues.html">49. JavaScript Program to Extract Given Property Values from Objects as Array</a></li>
+            <li><a href="GetRandomItemFromArray.html">50. JavaScript Program to Get Random Item From an Array</a></li>
+            <li><a href="RandomNumberBetweenTwoNumbers.html">51. JavaScript Program to Generate a Random Number Between Two Numbers</a></li>
+            <li><a href="GetCurrentURL.html">52. JavaScript Program To Get The Current URL</a></li>
+            <li><a href="WorkWithConstants.html">53. JavaScript Program To Work With Constants</a></li>
+            <li><a href="GenerateRangeOfNumbersAndCharacters.html">54. JavaScript Program to Generate a Range of Numbers and Characters</a></li>
+            <li><a href="FunctionOverloading.html">55. JavaScript Program to Perform Function Overloading</a></li>
+            <li><a href="StackAndQueue.html">56. JavaScript Program to Implement a Stack and Queue</a></li>
+            <li><a href="CheckFloatOrInteger.html">57. JavaScript Program to Check if a Number is Float or Integer</a></li>
+            <li><a href="GetImageDimensions.html">58. JavaScript Program to Get the Dimensions of an Image</a></li>
+            <li><a href="RemoveWhitespaces.html">59. JavaScript Program to Remove All Whitespaces From a Text</a></li>
+            <li><a href="ConvertDateToNumber.html">60. JavaScript Program to Convert Date to Number</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Rohan Gautam. All rights reserved.</p>
+    </footer>
+</body>
+</html>

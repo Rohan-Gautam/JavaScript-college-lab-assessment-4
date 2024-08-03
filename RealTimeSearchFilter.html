@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rohan Gautam">
+    <title>Real-time Search Filter</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #65b7f6 0%, #780476 100%);
+        }
+        #search {
+            padding: 10px;
+            font-size: 16px;
+            border: 0.4vh solid #00000098;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        #item-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item {
+            padding: 15px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #cecece48;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .item:hover {
+            background-color: #a71ae8a4;
+            transform: scale(1.05);
+            color: white;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="search" placeholder="Search items...">
+    <div id="item-list">
+        <div class="item">Apple</div>
+        <div class="item">Banana</div>
+        <div class="item">Cherry</div>
+        <div class="item">Date</div>
+        <div class="item">Elderberry</div>
+        <div class="item">Fig</div>
+        <div class="item">Grape</div>
+        <div class="item">Honeydew</div>
+        <div class="item">Kiwi</div>
+        <div class="item">Lemon</div>
+        <div class="item">Mango</div>
+        <div class="item">Nectarine</div>
+        <div class="item">Orange</div>
+        <div class="item">Papaya</div>
+        <div class="item">Quince</div>
+        <div class="item">Raspberry</div>
+        <div class="item">Strawberry</div>
+        <div class="item">Tomato</div>
+        <div class="item">Ugli Fruit</div>
+        <div class="item">Vanilla Bean</div>
+        <div class="item">Watermelon</div>
+        <div class="item">Xigua</div>
+        <div class="item">Yam Bean</div>
+        <div class="item">Zucchini</div>
+        <div class="item">Apricot</div>
+        <div class="item">Blackberry</div>
+        <div class="item">Cantaloupe</div>
+        <div class="item">Dragonfruit</div>
+        <div class="item">Elderflower</div>
+        <div class="item">Feijoa</div>
+        <div class="item">Grapefruit</div>
+        <div class="item">Huckleberry</div>
+        <div class="item">Indian Fig</div>
+        <div class="item">Jujube</div>
+        <div class="item">Kumquat</div>
+        <div class="item">Lime</div>
+        <div class="item">Mulberry</div>
+        <div class="item">Nance</div>
+        <div class="item">Olive</div>
+        <div class="item">Peach</div>
+        <div class="item">Pineapple</div>
+        <div class="item">Plum</div>
+        <div class="item">Pomegranate</div>
+        <div class="item">Quince</div>
+        <div class="item">Raisin</div>
+        <div class="item">Salak</div>
+        <div class="item">Tamarind</div>
+        <div class="item">Uva</div>
+        <div class="item">Voavanga</div>
+        <div class="item">Wolfberry</div>
+        <div class="item">Ximenia</div>
+        <div class="item">Yarrow</div>
+        <div class="item">Ziziphus</div>
+    </div>
+
+    <footer>&copy; 2024 Rohan Gautam. All rights reserved.</footer>
+    
+    <script>
+        $(document).ready(function(){
+            $("#search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#item-list .item").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

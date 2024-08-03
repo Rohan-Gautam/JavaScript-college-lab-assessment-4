@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rohan Gautam">
+    <title>Swap Two Variables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #65b7f6 0%, #780476 100%);
+            color: black;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            border: 0.4vh solid #00000098;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Swap Two Variables</h1>
+    <input type="number" id="var1" placeholder="Enter first variable">
+    <input type="number" id="var2" placeholder="Enter second variable">
+    <button onclick="swapVariables()">Swap</button>
+    <p id="result"></p>
+</div>
+
+<footer>&copy; 2024 Rohan Gautam. All rights reserved.</footer>
+
+<script>
+    function swapVariables() {
+        var var1 = document.getElementById('var1').value;
+        var var2 = document.getElementById('var2').value;
+
+        // Convert values to numbers
+        var1 = parseFloat(var1);
+        var2 = parseFloat(var2);
+
+        // Swap the values
+        var temp = var1;
+        var1 = var2;
+        var2 = temp;
+
+        // Display the result
+        document.getElementById('result').textContent = 
+            'After swapping: \nFirst Variable: ' + var1 + '\nSecond Variable: ' + var2;
+    }
+</script>
+
+</body>
+</html>

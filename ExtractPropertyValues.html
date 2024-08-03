@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rohan Gautam">
+    <title>Extract Property Values from Objects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #65b7f6 0%, #780476 100%);
+            color: black;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            border: 0.4vh solid #00000098;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+        }
+        textarea {
+            display: block;
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            height: 150px;
+            resize: vertical;
+        }
+        input {
+            display: block;
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+        button {
+            display: block;
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Extract Property Values</h1>
+    <textarea id="array" placeholder='Enter array of objects in JSON format, e.g. [{"name":"Alice","age":25},{"name":"Bob","age":30}]'></textarea>
+    <input type="text" id="property" placeholder="Property to extract">
+    <button onclick="extractProperty()">Extract Property</button>
+    <p id="result"></p>
+</div>
+
+<footer>&copy; 2024 Rohan Gautam. All rights reserved.</footer>
+
+<script>
+    function extractProperty() {
+        const arrayStr = document.getElementById('array').value;
+        const property = document.getElementById('property').value;
+
+        let array;
+        try {
+            array = JSON.parse(arrayStr);
+        } catch (e) {
+            document.getElementById('result').textContent = 'Invalid JSON format.';
+            return;
+        }
+
+        if (!Array.isArray(array) || array.some(item => typeof item !== 'object' || item === null)) {
+            document.getElementById('result').textContent = 'Invalid array of objects.';
+            return;
+        }
+
+        const values = array.map(item => item[property]).filter(value => value !== undefined);
+        document.getElementById('result').textContent = `Property Values: ${JSON.stringify(values)}`;
+    }
+</script>
+
+</body>
+</html>

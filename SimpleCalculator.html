@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rohan Gautam">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #65b7f6 0%, #780476 100%);
+            color: black;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            border: 0.4vh solid #00000098;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the content horizontally */
+        }
+        h1 {
+            text-align: center;
+        }
+        input, select {
+            display: block;
+            width: 80%;
+            max-width: 400px; /* Restrict maximum width */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center; /* Center text inside the input field */
+        }
+        button {
+            display: block;
+            width: 80%;
+            max-width: 400px; /* Restrict maximum width */
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simple Calculator</h1>
+    <input type="number" id="num1" placeholder="Enter first number" step="any">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">X</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="num2" placeholder="Enter second number" step="any">
+    <button onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+</div>
+
+<footer>&copy; 2024 Rohan Gautam. All rights reserved.</footer>
+
+<script>
+    function calculate() {
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var num2 = parseFloat(document.getElementById('num2').value);
+        var operator = document.getElementById('operator').value;
+        var result = '';
+
+        if (isNaN(num1) || isNaN(num2)) {
+            result = 'Please enter valid numbers.';
+        } else {
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = 'Invalid operator.';
+            }
+            result = 'Result: ' + result;
+        }
+
+        document.getElementById('result').textContent = result;
+    }
+</script>
+
+</body>
+</html>

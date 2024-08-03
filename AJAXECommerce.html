@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rohan Gautam">
+    <title>E-Commerce Product Fetcher</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #65b7f6 0%, #780476 100%);
+        }
+        .product-container {
+            max-width: 50vw;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            border: 0.4vh solid #00000098;
+            background-color: #ffffffb0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #cecece48;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 30%;
+            margin: 10px;
+            padding: 15px;
+            box-sizing: border-box;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+        }
+        .product-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .product-item h3 {
+            margin: 10px 0;
+        }
+        .product-item p {
+            margin: 5px 0;
+        }
+        .fetch-button {
+            display: block;
+            margin: 0 auto 20px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .fetch-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-container">
+    <h1 class="product-header">E-Commerce Product List</h1>
+    <button class="fetch-button">Fetch Products</button>
+    <div class="product-list" id="product-list">
+        <!-- Products will be dynamically inserted here -->
+    </div>
+</div>
+
+<footer>&copy; 2024 Rohan Gautam. All rights reserved.</footer>
+
+<script>
+$(document).ready(function() {
+    $('.fetch-button').click(function() {
+        $.ajax({
+            url: 'products.json', // Mock JSON file for example
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                var productList = $('#product-list');
+                productList.empty(); // Clear any previous products
+                data.products.forEach(function(product) {
+                    var productHtml = `
+                        <div class="product-item">
+                            <img src="${product.image}" alt="${product.name}">
+                            <h3>${product.name}</h3>
+                            <p>Price: $${product.price}</p>
+                            <p>${product.description}</p>
+                        </div>`;
+                    productList.append(productHtml);
+                });
+            },
+            error: function() {
+                alert('An error occurred while fetching the product data.');
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
